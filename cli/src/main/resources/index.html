@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visulog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        Visulog
+    </div>
+    <div id="container">
+        <div id="json-form">
+            <label>Select the JSON file</label>
+            <br>
+            <input type="file" id="json-data"/>
+            <button id="go-button">Go !</button>
+        </div>
+    </div>
+    <script>
+        let goButton = document.querySelector('#go-button');
+        let fileInput = document.querySelector('#json-data');
+
+        let git;
+
+        goButton.addEventListener('click', () => {
+            let file = document.querySelector("#json-data").files[0];
+            let reader = new FileReader();
+            reader.addEventListener('load', function(e) {
+                    let text = e.target.result;
+                    git = JSON.parse(text);
+                    localStorage.setItem('gitData', text);
+                    displayModules();
+            });
+            reader.readAsText(file);
+            location.href = 'module.html';
+        })
+    </script>
+</body>
+</html>

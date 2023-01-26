@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+#header {
+    width: 100vw;
+    height: 1em;
+    background-color: lightskyblue;
+    font-size: xx-large;
+    text-align: center;
+    padding: .5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#container {
+    display: grid;
+    place-items: center;
+    height: 50vh;
+    justify-items: center;
+}
+#json-form {
+    border-radius: 2rem;
+    border: 1px solid lightskyblue;
+    padding: 2rem;
+}
+#charts-selector-container {
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+#chart {
+    max-width: 90vw;
+}

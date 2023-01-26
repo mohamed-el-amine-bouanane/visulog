@@ -1,0 +1,26 @@
+# this file is an example configuration
+
+path: "." # The path of the git repo
+plugins: # The list of plugins you want to use with their options
+  - name: countCommits # The name of the plugin
+    options: # The plugin's option
+      charts: # The charts to add to your plugin
+        - bar
+        - doughnut
+        - line
+      valueOptions: # Key <-> value settings
+        displayName: Compter les commits par personne
+        width: 300
+      toggleOptions: # On/Off settings
+        - nocolor
+        - cute
+        - percent
+  - name: countAuthors # Here's a second plugin
+    options: # With more options
+      charts:
+        - pie
+        - bar
+      valueOptions:
+        displayName: Compter le nombre total d'auteurs
+        date: 2021-01-01~2022-01-01 # A date filter
+        author: ".*Claire.*" # A name filter
